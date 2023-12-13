@@ -37,4 +37,16 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* the main function for stack & queue */
+stack_t *add_stack(stack_t **head, const int n);
+stack_t *add_queue(stack_t **head, const int n);
+void free_node(stack_t *head);
+
+/* mandatory functions */
+void print_stack(stack_t **head, unsigned int line_cont);
+void pint(stack_t **head, unsigned int line_cont);
+void pop(stack_t **head, unsigned int line_cont);
+void nop(stack_t **head, unsigned int line_cont);
+void add(stack_t **head, unsigned int line_cont);
+void swap(stack_t **head, unsigned int line_cont);
 #endif /* MONTY_H */
