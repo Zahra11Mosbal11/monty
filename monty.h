@@ -58,7 +58,8 @@ extern bus_t bus;
 stack_t *add_stack(stack_t **head, const int n);
 stack_t *add_queue(stack_t **head, const int n);
 void free_node(stack_t *head);
-int fun_execute(char *content, stack_t **head, unsigned int line_count, FILE *file);
+int fun_execute(char *content, stack_t **head, unsigned int line_count,
+		FILE *file);
 void push(stack_t **head, unsigned int counter);
 
 /* mandatory functions */

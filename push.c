@@ -2,7 +2,7 @@
 
 
 /**
- * f_push - add node to the stack
+ * push - add node to the stack
  * @head: stack head
  * @counter: line_number
  * Return: no return

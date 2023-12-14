@@ -2,12 +2,13 @@
 /**
 * execute - executes the opcode
 * @head: head stack
-* @line-count: line count
+* @line_count: line count
 * @file: monty file
 * @content: line content
 * Return: nothing
 */
-int fun_execute(char *content, stack_t **head, unsigned int line_count, FILE *file)
+int fun_execute(char *content, stack_t **head, unsigned int line_count,
+		FILE *file)
 {
 	instruction_t options[] = {
 				{"push", push}, {"pall", print_stack}, {"pint", pint},
