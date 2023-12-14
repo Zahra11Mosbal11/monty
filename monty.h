@@ -1,5 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
+
 #define  _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
@@ -69,4 +70,7 @@ void pop(stack_t **head, unsigned int line_cont);
 void nop(stack_t **head, unsigned int line_cont);
 void add(stack_t **head, unsigned int line_cont);
 void swap(stack_t **head, unsigned int line_cont);
+
+/*advanced function */
+void sub(stack_t **head, unsigned int line_cont);
 #endif /* MONTY_H */

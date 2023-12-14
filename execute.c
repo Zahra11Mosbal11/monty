@@ -16,6 +16,7 @@ int fun_execute(char *content, stack_t **head, unsigned int line_count,
 				{"swap", swap},
 				{"add", add},
 				{"nop", nop},
+				{"sub", sub},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
