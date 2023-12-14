@@ -10,7 +10,7 @@
 
 void rotl(stack_t **head, unsigned int count)
 {
-	stack_t *tmp = *head, *tmp1;
+	stack_t *tmp, *tmp1;
 
 	(void)count;
 
@@ -18,6 +18,7 @@ void rotl(stack_t **head, unsigned int count)
 	{
 		return;
 	}
+	tmp = *head;
 	tmp1 = (*head)->next;
 	tmp1->prev = NULL;
 	while (tmp->next != NULL)
@@ -44,11 +45,11 @@ void rot(stack_t **head, unsigned int count)
 
 	(void)count;
 
-	tmp = *head;
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
 	{
 		return;
 	}
+	tmp = *head;
 	while (tmp->next)
 	{
 		tmp = tmp->next;
