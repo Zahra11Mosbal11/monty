@@ -80,5 +80,7 @@ void pchar(stack_t **head, unsigned int count);
 void pstr(stack_t **head, unsigned int count);
 void rot1(stack_t **head, unsigned int count);
 void rot(stack_t **head, unsigned int count);
+void is_stack(stack_t **head, unsigned int line_cont);
+void is_queue(stack_t **head, unsigned int line_cont);
 
 #endif /* MONTY_H */

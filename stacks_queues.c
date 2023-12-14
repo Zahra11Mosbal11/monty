@@ -18,8 +18,8 @@ void add_stack(stack_t **head, int n)
 	if (*head)
 		(*head)->prev = new;
 	new->n = n;
-	new->prev = NULL;
 	new->next = *head;
+	new->prev = NULL;
 	*head = new;
 }
 /**
@@ -36,7 +36,7 @@ void add_queue(stack_t **head, int n)
 	if (last == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
+		/*exit(EXIT_FAILURE);*/
 	}
 	last->n = n;
 	last->prev = NULL;
@@ -48,8 +48,8 @@ void add_queue(stack_t **head, int n)
 	{
 		while (curnt->next != NULL)
 			curnt = curnt->next;
-		last->prev = curnt;
 		curnt->next = last;
+		last->prev = curnt;
 	}
 }
 /**

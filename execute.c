@@ -24,6 +24,8 @@ int fun_execute(char *content, stack_t **head, unsigned int line_count,
 				{"pstr", pstr},
 				{"rotl", rot},
 				{"rotr", rot},
+				{"queue", is_queue},
+				{"stack", is_stack},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
