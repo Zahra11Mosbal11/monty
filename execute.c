@@ -20,6 +20,8 @@ int fun_execute(char *content, stack_t **head, unsigned int line_count,
 				{"div", div_s},
 				{"mul", mul},
 				{"mod", mod},
+				{"pchar", pchar},
+				{"pstr", pstr},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
