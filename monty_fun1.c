@@ -44,7 +44,6 @@ void div_s(stack_t **head, unsigned int line_cont)
 		fprintf(stderr, "L%d: division by zero\n", line_cont);
 		fclose(bus.file);
 		free(bus.content);
-		free(bus.content);
 		free_node(*head);
 		exit(EXIT_FAILURE);
 	}
@@ -98,7 +97,6 @@ void mod(stack_t **head, unsigned int line_cont)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_cont);
 		fclose(bus.file);
-		free(bus.content);
 		free(bus.content);
 		free_node(*head);
 		exit(EXIT_FAILURE);
