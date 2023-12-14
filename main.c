@@ -1,4 +1,5 @@
 #include "monty.h"
+bus_t bus = {NULL, NULL, NULL, 0};
 
 /**
 * main - monty code interpreter
@@ -22,6 +23,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");/* open file on read*/
+	bus.file = file;
 	if (!file)/*if not possible to open the file*/
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
@@ -31,6 +33,7 @@ int main(int argc, char *argv[])
 	{
 		file_cont = NULL;
 		line = getline(&file_cont, &n, file);
+		bus.content = file_cont;
 		count++;
 		if (line > 0)
 		{
