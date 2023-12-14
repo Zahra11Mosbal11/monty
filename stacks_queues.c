@@ -3,9 +3,9 @@
  * add_stack - adds a new node at the beginning.
  * @head: the node
  * @n: the data
- * Return: the address of the new element, or NULL if it failed
+ * Return: void
  */
-stack_t *add_stack(stack_t **head, const int n)
+void add_stack(stack_t **head, int n)
 {
 	stack_t *new;
 
@@ -26,9 +26,9 @@ stack_t *add_stack(stack_t **head, const int n)
  * add_queue - new node at the end
  * @head: the node
  * @n: the data
- * Return: the address of the new element, or NULL if it failed
+ * Return: void
  */
-stack_t *add_queue(stack_t **head, const int n)
+void add_queue(stack_t **head, int n)
 {
 	stack_t *last, *curnt = *head;
 

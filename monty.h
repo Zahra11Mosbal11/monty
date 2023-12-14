@@ -55,8 +55,8 @@ typedef struct bus_s
 extern bus_t bus;
 
 /* the main function for stack & queue */
-stack_t *add_stack(stack_t **head, const int n);
-stack_t *add_queue(stack_t **head, const int n);
+void add_stack(stack_t **head, int n);
+void add_queue(stack_t **head, int n);
 void free_node(stack_t *head);
 int fun_execute(char *content, stack_t **head, unsigned int line_count,
 		FILE *file);
