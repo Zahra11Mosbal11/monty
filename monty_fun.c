@@ -9,10 +9,11 @@ void print_stack(stack_t **head, unsigned int line_cont)
 	stack_t *node;
 
 	(void) line_cont;
-	if (head == NULL)
-		exit(EXIT_FAILURE);
 	node = *head;
-	while (node != NULL)
+	if (node == NULL)
+		return;
+		/*exit(EXIT_FAILURE);*/
+	while (node)
 	{
 		printf("%d\n", node->n);
 		node = node->next;
@@ -26,7 +27,13 @@ void print_stack(stack_t **head, unsigned int line_cont)
 void pint(stack_t **head, unsigned int line_cont)
 {
 	if (head == NULL || *head == NULL)
+	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_cont);
+		fclose(bus.file);
+		free(bus.content);
+		free_node(*head);
+		exit(EXIT_FAILURE);
+	}
 	printf("%d\n", (*head)->n);
 }
 /**
@@ -39,8 +46,13 @@ void pop(stack_t **head, unsigned int line_cont)
 	stack_t *node;
 
 	if (head == NULL || *head == NULL)
+	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_cont);
-
+		fclose(bus.file);
+		free(bus.content);
+		free_node(*head);
+		exit(EXIT_FAILURE);
+	}
 	node = *head;
 	*head = node->next;
 	if (*head != NULL)
@@ -57,7 +69,13 @@ void add(stack_t **head, unsigned int line_cont)
 	int sum;
 
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
+	{
 		fprintf(stderr, "L%d: can't %s, stack too short\n", line_cont, "add");
+		fclose(bus.file);
+		free(bus.content);
+		free_node(*head);
+		exit(EXIT_FAILURE);
+	}
 	(*head) = (*head)->next;
 	sum = (*head)->n + (*head)->prev->n;
 	(*head)->n = sum;
@@ -74,7 +92,13 @@ void swap(stack_t **head, unsigned int line_cont)
 	stack_t *node;
 
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
+	{
 		fprintf(stderr, "L%d: can't %s, stack too short\n", line_cont, "swap");
+		fclose(bus.file);
+		free(bus.content);
+		free_node(*head);
+		exit(EXIT_FAILURE);
+	}
 	node = (*head)->next;
 	(*head)->next = node->next;
 	if (node->next != NULL)
