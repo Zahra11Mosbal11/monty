@@ -10,25 +10,22 @@
 
 void rotl(stack_t **head, unsigned int count)
 {
-	stack_t *tmp, *tmp1;
+	stack_t *current_node;
+	int top;
 
 	(void)count;
 
-	if (head == NULL || *head == NULL || (*head)->next == NULL)
-	{
+	if (!head || !*head)
 		return;
-	}
-	tmp = *head;
-	tmp1 = (*head)->next;
-	tmp1->prev = NULL;
-	while (tmp->next != NULL)
+
+	top = (*head)->n;
+	current_node = *head;
+	while (current_node->next)
 	{
-		tmp = tmp->next;
+		current_node->n = current_node->next->n;
+		current_node = current_node->next;
 	}
-	tmp->next = *head;
-	(*head)->next = NULL;
-	(*head)->prev = tmp;
-	(*head) = tmp1;
+	current_node->n = top;
 }
 
 /**
