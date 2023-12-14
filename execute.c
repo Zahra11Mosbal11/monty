@@ -27,7 +27,7 @@ int fun_execute(char *content, stack_t **head, unsigned int line_count,
 
 	op = strtok(content, " \n\t");
 	if (op && op[0] == '#')
-		return;
+		return (0);
 	bus.arg = strtok(NULL, " \n\t");
 	while (options[i].opcode && op)
 	{
