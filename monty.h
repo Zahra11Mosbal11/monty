@@ -41,6 +41,7 @@ typedef struct instruction_s
 stack_t *add_stack(stack_t **head, const int n);
 stack_t *add_queue(stack_t **head, const int n);
 void free_node(stack_t *head);
+int execute(char *content, stack_t **head, unsigned int line-count, FILE *file);
 
 /* mandatory functions */
 void print_stack(stack_t **head, unsigned int line_cont);
