@@ -61,11 +61,9 @@ void add_queue(stack_t **head, int n);
 void free_node(stack_t *head);
 int fun_execute(char *content, stack_t **head, unsigned int line_count,
 		FILE *file);
-void push(stack_t **head, unsigned int counter);
-void pchar(stack_t **head, unsigned int count);
-void pstr(stack_t **head, unsigned int count);
 
 /* mandatory functions */
+void push(stack_t **head, unsigned int counter);
 void print_stack(stack_t **head, unsigned int line_cont);
 void pint(stack_t **head, unsigned int line_cont);
 void pop(stack_t **head, unsigned int line_cont);
@@ -78,4 +76,9 @@ void sub(stack_t **head, unsigned int line_cont);
 void div_s(stack_t **head, unsigned int line_cont);
 void mul(stack_t **head, unsigned int line_cont);
 void mod(stack_t **head, unsigned int line_cont);
+void pchar(stack_t **head, unsigned int count);
+void pstr(stack_t **head, unsigned int count);
+void rot1(stack_t **head, unsigned int count);
+void rot(stack_t **head, unsigned int count);
+
 #endif /* MONTY_H */
