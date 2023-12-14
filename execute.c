@@ -17,6 +17,9 @@ int fun_execute(char *content, stack_t **head, unsigned int line_count,
 				{"add", add},
 				{"nop", nop},
 				{"sub", sub},
+				{"div", div_s},
+				{"mul", mul},
+				{"mod", mod},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
@@ -24,7 +27,7 @@ int fun_execute(char *content, stack_t **head, unsigned int line_count,
 
 	op = strtok(content, " \n\t");
 	if (op && op[0] == '#')
-		return (0);
+		return;
 	bus.arg = strtok(NULL, " \n\t");
 	while (options[i].opcode && op)
 	{

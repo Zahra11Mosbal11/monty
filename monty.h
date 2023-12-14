@@ -73,4 +73,7 @@ void swap(stack_t **head, unsigned int line_cont);
 
 /*advanced function */
 void sub(stack_t **head, unsigned int line_cont);
+void div_s(stack_t **head, unsigned int line_cont);
+void mul(stack_t **head, unsigned int line_cont);
+void mod(stack_t **head, unsigned int line_cont);
 #endif /* MONTY_H */
