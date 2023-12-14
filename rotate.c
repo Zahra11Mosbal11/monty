@@ -14,7 +14,7 @@ void rotl(stack_t **head, unsigned int count)
 
 	(void)count;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (head == NULL || *head == NULL || (*head)->next == NULL)
 	{
 		return;
 	}
@@ -45,7 +45,7 @@ void rot(stack_t **head, unsigned int count)
 	(void)count;
 
 	tmp = *head;
-	if (*head == NULL || (*head)->next == NULL)
+	if (head == NULL || *head == NULL || (*head)->next == NULL)
 	{
 		return;
 	}
