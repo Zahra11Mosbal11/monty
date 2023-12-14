@@ -15,13 +15,12 @@ stack_t *add_stack(stack_t **head, const int n)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
+	if (*head)
+		(*head)->prev = new;
 	new->n = n;
 	new->prev = NULL;
 	new->next = *head;
-	if (*head != NULL)
-		(*head)->prev = new;
 	*head = new;
-	return (new);
 }
 /**
  * add_queue - new node at the end
@@ -52,7 +51,6 @@ stack_t *add_queue(stack_t **head, const int n)
 		last->prev = curnt;
 		curnt->next = last;
 	}
-	return (last);
 }
 /**
  * free_node - Frees nodes in the stack.
