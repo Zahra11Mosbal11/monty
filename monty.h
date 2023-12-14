@@ -62,6 +62,8 @@ void free_node(stack_t *head);
 int fun_execute(char *content, stack_t **head, unsigned int line_count,
 		FILE *file);
 void push(stack_t **head, unsigned int counter);
+void pchar(stack_t **head, unsigned int count);
+void pstr(stack_t **head, unsigned int count);
 
 /* mandatory functions */
 void print_stack(stack_t **head, unsigned int line_cont);
