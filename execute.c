@@ -7,10 +7,10 @@
 * @content: line content
 * Return: nothing
 */
-int execute(char *content, stack_t **head, unsigned int line-count, FILE *file)
+int fun_execute(char *content, stack_t **head, unsigned int line_count, FILE *file)
 {
 	instruction_t options[] = {
-				{"push", f_push}, {"pall", print_stack}, {"pint", pint},
+				{"push", push}, {"pall", print_stack}, {"pint", pint},
 				{"pop", pop},
 				{"swap", swap},
 				{"add", add},
@@ -27,16 +27,16 @@ int execute(char *content, stack_t **head, unsigned int line-count, FILE *file)
 	while (options[i].opcode && op)
 	{
 		if (strcmp(op, options[i].opcode) == 0)
-		{	options[i].f(head, line-count);
+		{	options[i].f(head, line_count);
 			return (0);
 		}
 		i++;
 	}
 	if (op && options[i].opcode == NULL)
-	{ fprintf(stderr, "L%d: unknown instruction %s\n", line-count, op);
+	{ fprintf(stderr, "L%d: unknown instruction %s\n", line_count, op);
 		fclose(file);
 		free(content);
-		free_stack(*head);
+		free_node(*head);
 		exit(EXIT_FAILURE); }
 	return (1);
 }

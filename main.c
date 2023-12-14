@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 		count++;
 		if (line > 0)
 		{
-			execute(line, &stack, count, file);
+			fun_execute(file_cont, &stack, count, file);
 			/*printf("%s\n%d", file_cont, count); this line will rmove it*/
 		/* we call the execute function*/
 		}
